@@ -11,15 +11,15 @@ const GetVideogames = async ()=> {
         through: { attributes: []} // Se utiliza para decir que no incluya nada de la tabla de relacion.
     }]
 });
-
+console.log(DBDATA)
 const allvgDB = DBDATA.map((vg) => {
-    const {id, name, background_image, rating, Genres } = vg 
+    const {id, name, background_image, rating, genres } = vg 
     return {
         id, 
         name, 
         background_image, 
         rating, 
-        genres: Genres.map((genre) => genre.name) 
+        genres: genres?.map(genre => genre.name) 
     }
 })
 

@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 // Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('videogame', {
@@ -12,27 +12,54 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false, 
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [0, 25]
+      }
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: [20, 2500]
+      }
     },
     platforms: {
-      type: DataTypes.ARRAY(DataTypes.STRING), //necesito el nombre de propiedad  ej: Xbox
-      allowNull: false
-    },
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
+      validate: {
+          hasAtLeastOneElement: function (value) {
+            if (!Array.isArray(value) || value.length < 1) {
+              throw new Error('The videogame must have at least 1 platform.');
+            }
+          }
+        }
+      },
+
     background_image: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        isUrl: true
+      }
     },
     released: {
       type: DataTypes.DATEONLY, // YYYY-MM-DD
-      allowNull: false
+      allowNull: false, 
+      validate: {
+        isAfter: "1958-10-18",
+      }
     },
     rating:{
       type: DataTypes.FLOAT,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0,
+      validate: {
+        isFloat: true,
+        min: 0,
+        max: 10
+      }
     }
   },{ timestamps: false}
   );

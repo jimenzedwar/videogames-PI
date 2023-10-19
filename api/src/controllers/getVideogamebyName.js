@@ -22,7 +22,7 @@ const getVgByName = async (name)=> {
     });
 
 const matchingVgs = matchingVgDB.map((vg) => {
-    const {id, name, background_image, platforms, released, rating, Genres } = vg 
+    const {id, name, background_image, platforms, released, rating, genres } = vg 
     return {
         id, 
         name, 
@@ -30,11 +30,11 @@ const matchingVgs = matchingVgDB.map((vg) => {
         platforms, 
         released,
         rating, 
-        genres: Genres.map((genre) => genre.name) 
+        genres: genres?.map((genre) => genre.name) 
     }
 })
 
-    const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}` // declaramos el endpoint con el apiKey y el ID
+    const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}` // declaramos el endpoint con el apiKey y el name
     const resultData = await axios.get(endpoint)
     const resultApi = resultData.data.results
 

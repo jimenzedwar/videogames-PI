@@ -11,7 +11,7 @@ const newVg = await Videogame.create({
     rating, 
     description
 })
-const genresDB = await Genre.findAll({where: {"name": genres}})
+const genresDB = await Genre.findAll({where: {name: genres}})
 await newVg.addGenres(genresDB);
 return newVg
 }
