@@ -1,0 +1,12 @@
+.Home{
+    position: relative;
+    width: 173%;
+    padding: 100px;
+    left: -585px;
+    top: 10px;
+    flex-direction: row;
+    background-image: url("../../recursos/pixel-jeff-mario.gif");
+    background-size: 100%;
+    background-repeat: repeat;
+    margin-bottom: -100px;
+    }

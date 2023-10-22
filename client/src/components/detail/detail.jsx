@@ -28,7 +28,7 @@ const Detail = () => {
 <div className="detail">
         <h2 className="NombreD">Name: {name}</h2>
 
-        <div className="platforms">Platforms: {platforms?.map((platform, index) => {
+        <div className="platforms">Platforms: { !platforms?.length ? <span>No information about the platforms has been provided.</span> : platforms?.map((platform, index) => {
                             return platforms.length - 1 === index
                             ? <span key={index}>{platform}</span>
                             : <span key={index}>{`${platform} | `}</span>
@@ -37,7 +37,7 @@ const Detail = () => {
         <h2 className="NombreSP">released: {released}</h2>
         <h2 className="NombreG">rating: {rating}</h2>
         <h2 className="NombreO">
-          genres: {genres?.map((genre, index) => {
+        genres: { !genres?.length ? <span>No information about the genres has been provided.</span> : genres?.map((genre, index) => {
                             return genres.length - 1 === index
                             ? <span key={index}>{genre}</span>
                             : <span key={index}>{`${genre} | `}</span>

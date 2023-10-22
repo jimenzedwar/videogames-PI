@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react";
 import { useDispatch, useSelector,  } from "react-redux"
 import {getVgByName, updatePage, resetFilter, filterByCreator, filterByGenre, sortByAlphabet, sortByRating } from "../../redux/actions"
-
+import "./filters.css"
 
 const Filter = () => {
 //Estados locales para almacenar los valores de los campos de busqueda
@@ -25,7 +25,7 @@ const handleSearchInput = (event) => {
 const handleSearchSubmit = (event) =>{
     event.preventDefault();
     dispatch(getVgByName(vgName));//Envía acción de búsqueda con el nombre del VG
-    setVgName("");//restablecer campo de busqueda 
+    setVgName(""); //restablecer campo de busqueda 
     setGenre("");
     setCreator("");
     setOrder("");
@@ -76,16 +76,21 @@ const handleResetFilters = (event) => {
 
         
 <form className="searchBar" onSubmit={handleSearchSubmit}>
+            <div className="InputContainer">
             <input className="searchInput"
                 type="text"
                 placeholder="Search by name..."
                 value={vgName}
                 onChange={handleSearchInput}
             />
+            </div>
             <button className="searchSubmitbtn"
-                type="submit"> Search</button>
+                type="submit"><span>
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"></path></svg>
+              </span></button>
             </form>
 
+            <div className="selectG">
         <select className="genreSelector"
             name="filterByGenre"
             value={genre}
@@ -99,7 +104,8 @@ const handleResetFilters = (event) => {
             );
         })}
     </select>
-
+    </div>
+    <div className="selectC">
     <select className="creatorSelector"
         name="filterByCreator"
         value={creator}
@@ -110,7 +116,8 @@ const handleResetFilters = (event) => {
         <option value="db">Database</option>
         <option value="api">API</option>
     </select>
-
+    </div>
+    <div className="selectS">
     <select className="sortSelector"
         name="Sort"
         value={order}
@@ -122,8 +129,11 @@ const handleResetFilters = (event) => {
         <option value="ratingAsc">Rating ↑</option>
         <option value="ratingDesc">Rating ↓</option>
         </select>
-
-    <button className="ResetFilters" onClick={handleResetFilters}>Reset</button>
+        </div>
+    <button className="ResetFilters" onClick={handleResetFilters}> 
+    <div className="signR">↻</div>
+        <div className="textR">Reset</div>
+        </button>
     </div>
     )
 }

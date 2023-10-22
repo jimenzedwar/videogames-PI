@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.container {
+    position: relative;
+    font-family: 'Press Start 2P', sans-serif;;
+    color: aliceblue;
+    animation: rot 2s infinite ease;
+  }
+  
+  .container::before, .container::after {
+    content: "";
+    background-color: #0000004c;
+    position: absolute;
+  }
+  
+  .container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    top: 34%;
+    right: 5%;
+    border: 1px solid;
+  }
+  
+  .container .Card {
+    width: 11.875em;
+    height: 15.875em;
+    padding: 6rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid #7C81AD;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 7px 7px 7px 40px;
+    transition: all ease .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .Name {
+    position: relative;
+    top: -60px;
+    width: 250px;
+    right: 35px;
+    margin-top: -10px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .1em
+  }
+  .Genres {
+    position: relative;
+    top: 80px;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: .1em
+  }
+  .StarRating{
+    position: relative;
+    top: -2px;
+    left: 10px;
+    font-size: 20px;
+  }
+   .Rating {
+    position: relative;
+    top: 80px;
+    left: -12px;
+    font-size: 0px;
+    font-weight: 500;
+    letter-spacing: .1em
+  }
+   .refImage {
+    position: relative;
+    top: 20px;
+    width: 300px ;
+    height: 200px;
+    border-radius: 7px 7px 7px 40px;
+    margin: -60px;
+  }
+
+
+  .container .Card:hover {
+    box-shadow: 0px 0px 200px 1px #7C81AD;
+    border: 1px solid #7C81AD;
+    box-shadow: 0 0 3000px 1000px rgba(37, 3, 95, 0.271),inset 5px 5px 5px 0px rgba(31, 31, 31, 0.114);
+  }
+
+  .detailbtn {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #7C81AD;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    cursor: pointer;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   .Card:hover .detailbtn {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+   @keyframes rot {
+    0% {
+      transform: rotateX(-15deg) translateY(0px);
+    }
+  
+    50% {
+      transform: rotateX(-15deg) translateY(-10px);
+    }
+  
+    100% {
+      transform: rotateX(-15deg) translateY(0px);
+    }
+  }

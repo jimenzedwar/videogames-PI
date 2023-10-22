@@ -1,0 +1,142 @@
+/* background */
+
+  .landingP {
+    width: 230vh;
+    height: 100vh;
+    background-image: url('../../recursos/backLand.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    right: 737px;
+    top: 68px;
+    overflow: hidden;
+    margin: -100px;
+  }
+
+/* gif */
+  .gifLP {
+    background-image: url('../../recursos/2.gif');
+    background-repeat: no-repeat;
+    padding: 10%;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    left: 1085px;
+    top: 255px;
+  }
+
+  /* buttons */
+  .Homebtn {
+    position: relative;
+    background: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    outline-color: deeppink;
+    transition: filter 250ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    top: 335px;
+    right: 10px;
+}
+
+.loginbtnLP{
+    position: relative;
+    background: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    outline-color: deeppink;
+    transition: filter 250ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    top: 335px;
+    left: 365px;
+}
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: hsl(228, 16%, 12%);
+    border-radius: 8px;
+    filter: blur(2px);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(
+      to right,
+      hsl(248, 39%, 39%) 0%,
+      hsl(248, 39%, 49%) 8%,
+      hsl(248, 39%, 39%) 92%,
+      hsl(248, 39%, 29%) 100%
+    );
+  }
+  
+  .front {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background: hsl(248, 53%, 58%);
+    padding: 16px 32px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  
+  .Homebtn:hover, .loginbtnLP:hover {
+    filter: brightness(110%);
+  }
+  
+  .Homebtn:hover .front {
+    transform: translateY(-2px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .loginbtnLP:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  
+  .Homebtn:active, .loginbtnLP:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  
+  .Homebtn:hover, .loginbtnLP:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  
+  .Homebtn:active, .loginbtnLP:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  
+  .Homebtn:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  .loginbtnLP:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+
+  .hide-overflow {
+    overflow: hidden;
+  }

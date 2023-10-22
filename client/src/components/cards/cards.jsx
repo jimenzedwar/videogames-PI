@@ -1,36 +1,25 @@
 import { useSelector } from "react-redux";
 import Card from "../card/card";
 import React from "react";
-
+import "./cards.css"
+import Loading from "../Loading/loading";
 
 const Cards = () => {
   const renderedItems = useSelector((state) => state.pagination);
-  const items = useSelector((state) => state.currentVg);
-const firstItemsRendered = items.slice(0, 15)
+  const cardsToRender = renderedItems.slice(0, 15)
 
-if (!renderedItems.length) {
-  return (
-    <div className='Cards'>
-        {firstItemsRendered.map((vg, index) => {
-            return(
-            <Card
-            key={index}
-            id={vg.id}
-            name={vg.name}
-            background_image={vg.background_image}
-            genres={vg.genres}
-            rating={vg.rating}
-            />)
-            })}
-      </div>
-    );
-} else {
     return (
       typeof items === "string" ? (
         <h1 className="notFound">{items}</h1>
       ) : (
+        <div>
+          {!cardsToRender.length ? (
+            <div>
+              <Loading />
+            </div>
+          ) : (
     <div className='Cards'>
-        {renderedItems.map((vg, index) => {
+        {cardsToRender.map((vg, index) => {
             return(
             <Card
             key={index}
@@ -39,10 +28,13 @@ if (!renderedItems.length) {
             background_image={vg.background_image}
             genres={vg.genres}
             rating={vg.rating}
-            />)
+            />
+            )
             })}
-      </div>)
-    );
-}
+      </div>
+          )}
+      </div>
+    )
+    )
 }
 export default Cards;

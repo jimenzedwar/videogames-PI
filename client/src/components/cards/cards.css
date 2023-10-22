@@ -1,0 +1,11 @@
+.Cards {
+    top: 130px;
+    display: flex;
+    width: 90%;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    left: 130px;
+    margin-top: 10px;
+}
