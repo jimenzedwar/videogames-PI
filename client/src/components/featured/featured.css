@@ -34,7 +34,7 @@
     background-size: cover;
     background-repeat: none;
     transition: flex 0.2s ease;
-    
+    border-radius: 7px;
     &:hover{
       flex: 7;
     }

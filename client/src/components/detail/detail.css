@@ -1,0 +1,209 @@
+.ContainerD{
+background-image: url("../../recursos/desktop-1920x1080.jpg");
+background-size: 100%;
+background-repeat: no-repeat;
+position: relative;
+overflow: hidden;
+top: 5px;
+right: 543px;
+width: 222vh;
+height: 114vh;
+margin: -200px;
+}
+
+/* Card */
+
+.detailC {
+    position: relative;
+    top: 200px;
+    left: 470px;
+    font-family: 'Press Start 2P', sans-serif;;
+    color: aliceblue;
+    animation: rot 2s infinite ease;
+    width: 40.875em;
+    height: 50.875em;
+    padding: 6rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid #7C81AD;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 7px 7px 7px 7px;
+    transition: all ease .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    perspective: 1000px;
+    }
+    
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.999s;
+      margin: 10px;
+    }
+   .detailC:hover {
+    box-shadow: 0px 0px 200px 1px #7C81AD;
+    border: 1px solid #7C81AD;
+    box-shadow: 0 0 3000px 1000px rgba(37, 3, 95, 0.271),inset 5px 5px 5px 0px rgba(31, 31, 31, 0.114);
+  } 
+  
+  .detailC:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    margin: 10px;
+  }
+  
+  .card-front {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+  }
+
+  .platformsD{
+      position: absolute;
+      font-size: 18px;
+      width: 800px;
+      top: -85px;
+      left: -90px;
+      font-family: sans-serif;
+  }
+  .NombreD {
+    position: absolute;
+    width: 550px;
+    top: 0px;
+    left: 30px;
+    margin: 10px;
+  }
+
+.imageD {
+    position: absolute;
+    width: 750px;
+    height: 450px;
+    top: 210px;
+    right: -39px;
+    border-radius: 10px;
+    margin: 10px;
+    opacity: 1;
+  }
+  
+  .releasedD {
+    position: absolute;
+    width: 700px;
+    font-size: 25px;
+    left: -300px;
+    bottom: -90px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+  }
+
+  .ratingD {
+    position: absolute;
+    top: -120px;
+    left: -60px;
+    font-family: sans-serif;
+    }
+.descriptionD{
+  position: absolute;
+  width: 800px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+.genresD {
+  position: absolute;
+  bottom: -100px;
+  font-size: 30px;
+  left: 220px;
+  font-family: sans-serif;
+}
+
+
+.StarRatingD {
+  font-size: 50px;
+}
+
+.HomebtnD{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  top: 200px;
+  left: 250px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: calc(45px/2);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #7C81AD;
+}
+
+/* plus sign */
+.signHome {
+  width: 100%;
+  font-size: 3.2em;
+  color: white;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.textH {
+  position: absolute;
+  right: -80%;
+  width: 60%;
+  opacity: 0;
+  color: white;
+  font-size: 1.6em;
+  font-weight: 500;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.HomebtnD:hover {
+  width: 170px;
+  transition-duration: .3s;
+}
+
+.HomebtnD:hover .signHome {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 15px;
+}
+/* hover effect button's text */
+.HomebtnD:hover .textH {
+  right: -35px;
+  opacity: 1;
+  width: 90%;
+  bottom: 32px;
+  transition-duration: .4s;
+  padding-right: 20px;
+}
+/* button click effect*/
+.HomebtnD:active {
+  transform: translate(2px ,2px);
+}

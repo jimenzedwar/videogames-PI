@@ -26,7 +26,9 @@ if (!datos.platforms.length) {
 if(!urlRegex.test(datos.background_image)) {
     errors.background_image = "The image must be a valid URL."
 }
-
+if (datos.released === "") {
+    errors.released = "Your game must have a released date"
+}
 if (datos.released) {
     const year = Number(datos.released.split('-').shift())
     const currentYear = new Date().getFullYear();
@@ -36,10 +38,22 @@ if (datos.released) {
     if (year > currentYear) {
         errors.released = "The year can't be greater than the current year."
     }
-    return
 }
 if (!datos.genres.length) {
     errors.genres = "The videogame must have at least 1 genre."
+}
+
+if (!datos.rating) {
+    errors.rating = "Your game must have a released date"
+}
+
+if (datos.rating) {
+    if(datos.rating > 10) {
+        errors.rating = "Rating can't be greater than 10"
+    }
+    if(datos.rating < 0) {
+        errors.rating = "Rating can't be lower than 0"
+    }
 }
 return errors
 }

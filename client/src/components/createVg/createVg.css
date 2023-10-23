@@ -1,0 +1,404 @@
+.newVgC{
+    background-image: url('../../recursos/f5d475dcbc657830c77ab317d34611aa.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    width: 210vh;
+    height: 102vh;
+    position: absolute;
+    top: -23px;
+    right: 0px;
+    margin-right: 00px;
+    margin: 00px;
+}
+
+.formC{
+    width: 1600px;
+    height: 990px;
+    position: relative;
+    top: 100px;
+    left: 500px;
+    --input-focus: #161718;
+    --font-color: #323232;
+    --font-color-sub: #666666;
+    --bg-color: #fff;
+    --main-color: #161515;
+    padding: 20px;
+    background: rgba(211, 211, 211, 0.927);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 30px 30px var(--main-color);
+  }
+  
+  .titleCVg {
+    color: var(--main-color);
+    font-family: 'Press Start 2P', sans-serif;;
+    font-weight: 90;
+    font-size: 30px;
+    margin-bottom: 25px;
+    position: absolute;
+    top: 26px;
+    left: 460px;
+  }
+
+  .nameF{
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .imgF{
+    position: absolute;
+    top: 110px;
+    left: 570px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .descF{
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .releasedF{
+    position: absolute;
+    top: 300px;
+    left: 570px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .genresnameF{
+    position: absolute;
+    top: 500px;
+    left: 65px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .platformsnameF{
+    position: absolute;
+    top: 500px;
+    right: 525px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  .ratingNameF{
+    position: absolute;
+    top: 110px;
+    right: 425px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+
+  .ratingF{
+    position: absolute;
+    top: 170px;
+    right: 400px;
+  }
+  .inputNameCVG {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 340px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 1px 10px;
+    outline: none;
+  }
+  .inputImgCVG {
+    position: absolute;
+    top: 150px;
+    left: 570px;
+    width: 340px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 1px 10px;
+    outline: none;
+  }
+  .inputDescCVG {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    width: 340px;
+    height: 80px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 1px 10px;
+    outline: none;
+  }
+  .inputReleasedCVG {
+    position: absolute;
+    top: 350px;
+    left: 570px;
+    width: 250px;
+    height: 80px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--font-color-sub);
+    padding: 1px 10px;
+    outline: none;
+  }
+  .ratingF {
+    position: absolute;
+    top: 150px;
+    right: 250px;
+    width: 340px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 1px 10px;
+    outline: none;
+  }
+
+  .inputNameCVG::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  .inputimgCVG::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  .inputdescCVG::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  .inputReleasedCVG::-webkit-calendar-picker-indicator {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+
+  
+  .inputNameCVG:focus {
+    border: 2px solid var(--input-focus);
+
+    
+}
+.plattformsF {
+    position: absolute;
+    top: 560px;
+    left: 70px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.genresF {
+    position: absolute;
+    top: 560px;
+    left: 860px;
+    width: 709px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .genresF > label {
+    margin: 20px 30px; /* Espacio entre cada elemento */
+  }
+  .plattformsF > label {
+    margin: 20px 40px; /* Espacio entre cada elemento */
+  }
+  
+  .genresF input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y la etiqueta */
+  }
+  
+.plattformsF input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y la etiqueta */
+  }
+  
+  .genresF label {
+    font-size: 13px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  
+  .plattformsF label {
+    font-size: 13px;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  
+  
+  
+  .containerC {
+      --input-focus: #000000;
+      --input-out-of-focus: #ccc;
+      --bg-color: #fff;
+      --bg-color-alt: #666;
+      --main-color: #323232;
+      position: relative;
+    cursor: pointer;
+}
+
+.containerC input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -30px;
+    right: 50px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--input-out-of-focus);
+    transition: all 0.3s;
+}
+
+.containerC input:checked ~ .checkmark {
+    background-color: var(--input-focus);
+}
+
+.checkmark:after {
+    content: "";
+    width: 7px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    display: none;
+    border: solid var(--bg-color);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+.containerC input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.createvgbtnF {
+  margin: 50px auto 0 auto;
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 17px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: var(--font-color);
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+.createvgbtnF:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+  }
+  
+  .createvgbtnF:disabled {
+    background-color: #ccc;
+    border-color: #999; 
+    color: #999; 
+    cursor: not-allowed;}
+.HomebtnF {
+  margin: 50px auto 0 auto;
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 17px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: var(--font-color);
+  cursor: pointer;
+  position: absolute;
+  top: -30px;
+  right: 30px;
+}
+
+.HomebtnF:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+  }
+  
+
+  .errorNameC {
+    position: absolute;
+    top: 190px;
+    left: 106px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorImageC {
+    position: absolute;
+    top: 190px;
+    left: 579px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorRatingC {
+    position: absolute;
+    top: 190px;
+    right: 310px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorDescC {
+    position: absolute;
+    width: 300px;
+    top: 430px;
+    left: 106px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorReleasedC {
+    position: absolute;
+    top: 430px;
+    left: 579px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorGenresC {
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    font-size: 20px;
+    color: brown;
+  }
+  .errorPlatformsC {
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    font-size: 20px;
+    color: brown;
+  }
