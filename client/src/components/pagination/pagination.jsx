@@ -15,10 +15,9 @@ const Pagination = () => {
       }, [currentVg]);
         
     const handlePageChange = (page) => {
-        const startIndex = (page - 1) * itemsPerPage; // calcula el índice del primer elemento que se mostrará en la página actual. 
-        const endIndex = Math.min(startIndex + itemsPerPage, currentVg.length); // Asegura que no exceda el tamaño del array
+        const startIndex = (page - 1) * itemsPerPage; 
+        const endIndex = Math.min(startIndex + itemsPerPage, currentVg.length); 
         const displayedItems = currentVg.slice(startIndex, endIndex);
-        console.log(displayedItems)
         dispatch(updatePage(page))
         dispatch(renderedItems(displayedItems))
     }

@@ -21,10 +21,10 @@ const Detail = () => {
                 console.log(error) 
             });
 
-        return () => {//cuando componente se desmonta o cambia id
+        return () => {
             setVgDetail({});
         }
-    }, [id]);//id como arreglo de dependencias, se ejecutara esto cada vez que cambie el id 
+    }, [id]);
 
     const goHome = () => {
         navigate("/home")

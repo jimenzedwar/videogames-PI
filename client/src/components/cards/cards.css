@@ -1,5 +1,5 @@
 .Cards {
-    top: 130px;
+    top: 200px;
     display: flex;
     width: 90%;
     position: relative;
@@ -8,4 +8,18 @@
     flex-wrap: wrap;
     left: 130px;
     margin-top: 10px;
+}
+
+.notFound {
+    position: absolute;
+    width: 500px;
+    top: 400px;
+    left: 900px;
+    font-size: 40px;
+    color: #949ce5;
+    font-family: "Press Start 2P", sans-serif;
+    background-color: rgba(255, 255, 255, 0.145);
+    border: 1px solid #7C81AD;
+    border-radius: 20px;
+    letter-spacing: 4px;
 }

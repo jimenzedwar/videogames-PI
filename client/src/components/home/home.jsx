@@ -11,14 +11,21 @@ export default function Home () {
     
     const videoGames = useSelector((state) =>state.videoGames);
     const genres = useSelector((state) =>state.genres);
+    const vgsToRendered = useSelector((state) => state.pagination);
     const dispatch = useDispatch()
 
-    useEffect(() => {//se ejecutará después de que el componente se monte en el DOM.
+    useEffect(() => { 
         if (!videoGames.length) dispatch(getAllvg()); 
-        if (!genres.length) dispatch(getAllgenres());//si la longitud es cero se envia accion a traves de dispatch
+        if (!genres.length) dispatch(getAllgenres()); 
         },[videoGames, genres])
 
 return (
+    typeof vgsToRendered === "string" ? (
+        <div className="Home">
+        <NavBar/>
+        <Cards />
+</div>
+      ) :
     <div className="Home">
             <NavBar/>
             <Cards />

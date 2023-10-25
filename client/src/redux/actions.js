@@ -18,10 +18,10 @@ const getAllvg = () => {
     return async (dispatch) => {
         try{
             const response = await axios.get(endpoint);
-            const videoGames = response.data;//Se extraen la lista de videojuegos y se almacenan en la variable VideoGames.
-        dispatch({//Dispara la acción 
-            type: GET_ALLVG,//tipo de acción 
-            payload: videoGames//lista de videoGames como carga util
+            const videoGames = response.data;
+        dispatch({
+            type: GET_ALLVG,
+            payload: videoGames
     });
         }catch(error){
             alert(error.message);
@@ -33,7 +33,7 @@ const getAllgenres = () => {
     return async (dispatch) => {
         try{
             const response = await axios.get(endpoint);
-            const genres = response.data;//Se extraen la lista de Genres y se almacenan en la variable genres.
+            const genres = response.data;
         dispatch({
             type: GET_GENRES,
             payload: genres
@@ -48,7 +48,7 @@ const getAllgenres = () => {
         return async (dispatch) => {
             try{
                 const response = await axios.get(endpoint);
-                const specVideoGame = response.data;//Se extrae el videojuego
+                const specVideoGame = response.data;
             dispatch({
                 type: GET_NAME,
                 payload: specVideoGame

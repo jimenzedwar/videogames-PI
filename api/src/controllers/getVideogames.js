@@ -4,14 +4,15 @@ require('dotenv').config();
 const { API_KEY } = process.env;
 
 const GetVideogames = async ()=> {
-    const DBDATA = await Videogame.findAll({ // Se obtiene los vg de la DB.
-        include:[{ // Se usa para incluir una tabla relacionada.
-        model: Genre, // en este caso nos interesa incluir Genre.
+
+    //Busqueda en la base de datos
+    const DBDATA = await Videogame.findAll({ 
+        include:[{ 
+        model: Genre,
         attributes: ["name"], // se le pide que solo incluya los atributos de la columna "name".
-        through: { attributes: []} // Se utiliza para decir que no incluya nada de la tabla de relacion.
+        through: { attributes: []} // Para que no seleccione atributos de la tabla intermedia, solo la relacion en si
     }]
 });
-console.log(DBDATA)
 const allvgDB = DBDATA.map((vg) => {
     const {id, name, background_image, rating, genres } = vg 
     return {
@@ -22,8 +23,8 @@ const allvgDB = DBDATA.map((vg) => {
         genres: genres?.map(genre => genre.name) 
     }
 })
-
-const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}` // declaramos el endpoint con el apiKey
+//Busqueda en la api
+const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}`
 const pageNum = 15 //Cantidad de resultados que se quiere obtener por pagina
 const maxVg = 100 // Cantidad total de vg 
 const totalRequest = Math.ceil(maxVg/pageNum) // Cantidad de solicitudes necesarias a la api, en este caso serian 7
@@ -35,10 +36,9 @@ apivgPromises.push(axios.get(`${endpoint}&page_size=${pageNum}&page=${page}`)) /
 const promisesResult = await Promise.all(apivgPromises) // almacena todas las respuestas de las promesas
 
 const allApiVg = promisesResult.flatMap(res => res.data.results) // almcena los resultados de la respuestas de las promesas
-// Lo que hace es aplanar el array para quitar los subindices de array
 
 let apiVgClean = allApiVg?.map(vg => {
-    const {id, name, background_image, rating, genres } = vg //Aca genres esta en minscula porque lo requerimos de la Api, arriba va en mayuscula porque la requerimos del modelo
+    const {id, name, background_image, rating, genres } = vg
     return {
         id, 
         name, 
@@ -48,10 +48,10 @@ let apiVgClean = allApiVg?.map(vg => {
     }
 })
 
-apiVgClean = apiVgClean.slice(0, maxVg); //limito cantidad de resultados obtenidos de la API, seleccionamos elementos desde el primer elemento del array, indice 0 
-const allVideoGames = [...allvgDB, ...apiVgClean]; // aqui unimos tanto los datos de la DB como de la api
+apiVgClean = apiVgClean.slice(0, maxVg);
+const allVideoGames = [...allvgDB, ...apiVgClean];
 
-return allVideoGames; // por ultimo retornamos todos los datos
+return allVideoGames;
 }
 
 module.exports = GetVideogames

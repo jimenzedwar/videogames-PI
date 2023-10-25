@@ -51,7 +51,7 @@ switch (action.type) {
     }
     case FILTER_BY_CREATOR: {
         const creator = action.payload;
-        let filteredByCreator; //variable para almacenar los vg filtrados
+        let filteredByCreator;
 
         if (creator === 'all') {
             filteredByCreator = [...state.videoGames];
@@ -65,19 +65,19 @@ switch (action.type) {
             })
         };
 
-        let currentVg = [...filteredByCreator].filter(vg => {
+        let currentVgFC = [...filteredByCreator].filter(vg => {
             return state.filteredByGenre.includes(vg)
         });
 
-        if (!currentVg.length) {
-            currentVg = "No videogames were found with the provided filters."
+        if (!currentVgFC.length) {
+            currentVgFC = "No videogames were found with the provided filters."
         };
 
         return {
             ...state,
             filteredByCreator: filteredByCreator,
-            currentVg: currentVg,
-            pagination: currentVg
+            currentVg: currentVgFC,
+            pagination: currentVgFC
         };
     };
 
@@ -94,19 +94,19 @@ switch (action.type) {
             })
         }; 
 
-        let currentVg = [...filteredByGenre].filter(vg => {
+        let currentVgG = [...filteredByGenre].filter(vg => {
             return state.filteredByCreator.includes(vg)
         });
 
-        if (!currentVg.length) {
-            currentVg = "No videogames were found with the provided filters."
+        if (!currentVgG.length) {
+            currentVgG = "No videogames were found with the provided filters."
         };
 
         return {
             ...state,
             filteredByGenre: filteredByGenre,
-            currentVg: currentVg,
-            pagination: currentVg        
+            currentVg: currentVgG,
+            pagination: currentVgG     
         };
     }
 
@@ -150,7 +150,9 @@ switch (action.type) {
     return {
         ...state,
         currentVg: state.videoGames,
-        pagination: state.videoGames
+        pagination: state.videoGames,
+        filteredByCreator: state.videoGames,
+        filteredByGenre: state.videoGames
     }
     case CREATE_NEW_VG:
         const newVg = action.payload

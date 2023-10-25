@@ -9,8 +9,8 @@ const Cards = () => {
   const cardsToRender = renderedItems.slice(0, 15)
 
     return (
-      typeof items === "string" ? (
-        <h1 className="notFound">{items}</h1>
+      typeof renderedItems === "string" ? (
+        <h1 className="notFound">{renderedItems}</h1>
       ) : (
         <div>
           {!cardsToRender.length ? (

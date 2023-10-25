@@ -7,11 +7,13 @@ const { API_KEY } = process.env;
 let DBFull = false 
 
 const getGenres = async () => {
+    // Busqueda en la base de Datos
     if (DBFull) {
         const genresDB = await Genre.findAll()
         const genresCleanDB = genresDB.map(genre => genre.name)
         return genresCleanDB
     } else {
+        //busqueda en la api para cargar la base de datos
     const endpoint = `https://api.rawg.io/api/genres?key=${API_KEY}` 
     const allGenresApi = await axios.get(endpoint)
     const dataApi = allGenresApi.data.results

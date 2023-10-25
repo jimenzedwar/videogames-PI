@@ -12,7 +12,7 @@ const newVg = await Videogame.create({
     description
 })
 const genresDB = await Genre.findAll({where: {name: genres}})
-await newVg.addGenres(genresDB);
+await newVg.addGenres(genresDB); // le relaciona los generos 
 return newVg
 }
 

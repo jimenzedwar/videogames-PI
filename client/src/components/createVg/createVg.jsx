@@ -7,6 +7,7 @@ import './createVg.css'
 const NewVg = () => {
   const navigate = useNavigate()
   const genres = useSelector((state) => state.genres);
+  const newVgArray = useSelector((state) => state.pagination);
   const dispatch = useDispatch();
   const platforms = [
     "PC",
@@ -58,13 +59,13 @@ const NewVg = () => {
     if (event.target.type === "checkbox") {
       if (event.target.checked) {
         if (event.target.name === "platforms") {
-          // Agregar la plataforma al array de plataformas en el estado
+          
           setNewVg((prevState) => ({
             ...prevState,
             platforms: [...prevState.platforms, event.target.value],
           }));
         } else if (event.target.name === "genres") {
-          // Agregar el género al array de géneros en el estado
+          
           setNewVg((prevState) => ({
             ...prevState,
             genres: [...prevState.genres, event.target.value],
@@ -72,7 +73,7 @@ const NewVg = () => {
         }
       } else {
         if (event.target.name === "platforms") {
-          // Eliminar la plataforma del array de plataformas en el estado
+          
           setNewVg((prevState) => ({
             ...prevState,
             platforms: prevState.platforms.filter(
@@ -80,7 +81,7 @@ const NewVg = () => {
             ),
           }));
         } else if (event.target.name === "genres") {
-          // Eliminar el género del array de géneros en el estado
+          
           setNewVg((prevState) => ({
             ...prevState,
             genres: prevState.genres.filter(
@@ -90,7 +91,7 @@ const NewVg = () => {
         }
       }
     } else {
-      // Para otros campos de entrada, simplemente actualiza el estado
+      
       setNewVg({
         ...newVg,
         [event.target.name]: event.target.value,
@@ -106,9 +107,11 @@ const validations = () => {
     if(errors){
     if (Object.values(errors).every((error) => error === "")) {
       dispatch(createNewVg(newVg));
-    }}
+      alert("Your game has been created succesfully")
+      navigate("/home")
+    }
   };
-
+  }
   const goHome = () => {
     navigate("/home")
 }

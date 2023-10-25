@@ -6,7 +6,7 @@ import "./featured.css"
 const Featured = () => {
 const allVg = useSelector((state) => state.pagination);
 
-const suma = allVg.reduce((total, objeto) => total + objeto.rating, 0);
+const suma = allVg?.reduce((total, objeto) => total + objeto.rating, 0);
   const promedio = suma / allVg.length;
 
 const featuredVg = allVg?.filter((ele) => ele.rating > promedio);

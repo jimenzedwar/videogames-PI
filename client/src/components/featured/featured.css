@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .containerF{
-  position: relative;
-  top: 200px;
+  position: absolute;
+  bottom: 140px;
   left: 610px;
-    padding: -100px 0;
-    margin-bottom: 100px;
     width: 1140px;
-    height: 900px;
   }
   
   .FeaturedT{
-    position: relative;
-    margin-bottom: 45px;
+    position: absolute;
+    top: -100px;
+    left: 300px;
     font-family: 'Oswald', sans-serif;
     font-size: 44px;
     text-transform: uppercase;
@@ -23,13 +21,13 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 65vh;
+    height: 450px;
     cursor: pointer;
   }
   
   .item {
     flex: 1;
-    height: 50%;
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: none;

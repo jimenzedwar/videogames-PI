@@ -5,7 +5,7 @@ const { API_KEY } = process.env;
 const { Op } = require("sequelize")
 
 const getVgByName = async (name)=> {
-
+//busqueda en la base de datos
     const matchingVgDB = await Videogame.findAll({
         where: {
         name: {
@@ -33,8 +33,8 @@ const matchingVgs = matchingVgDB.map((vg) => {
         genres: genres?.map((genre) => genre.name) 
     }
 })
-
-    const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}` // declaramos el endpoint con el apiKey y el name
+//Busqueda en la base de datos por nombre
+    const endpoint = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`
     const resultData = await axios.get(endpoint)
     const resultApi = resultData.data.results
 
@@ -56,6 +56,7 @@ const matchingVgs = matchingVgDB.map((vg) => {
             genres: genres.map((genre) => genre.name) 
         }
     })
+    //Juntamos los resultados
     const allMatchingVg = [...matchingVgsRaw, ...matchingVgs];
     const matchingVgClean = allMatchingVg.slice(0, 15);
     return allMatchingVg.length ? matchingVgClean

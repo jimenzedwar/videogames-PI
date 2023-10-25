@@ -5,13 +5,13 @@ const { API_KEY } = process.env;
 
 
 const GetVideogamesbyId = async (id)=> {
-
+    //busqueda en la base de datos (el UUID contiene "-")
     if (id.includes("-")){
-    const DBDATA = await Videogame.findByPk( id, // Se obtiene el vg especifico de la DB.
-       {include:[{ // Se usa para incluir una tabla relacionada.
-        model: Genre, // en este caso nos interesa incluir Genre.
-        attributes: ["name"], // se le pide que solo incluya los atributos de la columna "name".
-        through: { attributes: []} // Se utiliza para decir que no incluya nada de la tabla de relacion.
+    const DBDATA = await Videogame.findByPk( id,
+       {include:[{ 
+        model: Genre, 
+        attributes: ["name"], 
+        through: { attributes: []}
     }]
 })
 if (!DBDATA) throw Error(`Request failed with status code 404. There is no videogame with the id ${id}`); // Si no encontro nada retornamos un error
@@ -30,7 +30,8 @@ const vgDB = {
     }
     return vgDB
 } else {
-    const endpoint = `https://api.rawg.io/api/games/${id}?key=${API_KEY}` // declaramos el endpoint con el apiKey y el ID
+    // Busqueda en la api si no contiene "-"
+    const endpoint = `https://api.rawg.io/api/games/${id}?key=${API_KEY}` 
     const resultData = await axios.get(endpoint)
     const vgByIdRaw = resultData.data;
     const { name, background_image, platforms, released, rating, genres, description } = vgByIdRaw;

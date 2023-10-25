@@ -14,7 +14,7 @@ export default function Card (props) {
          <h1 className="Name">{name}</h1>
          <img src={background_image} alt={name} className="refImage" />
          <h2 className="Genres">{ !genres?.length ? <span>No information about the genres has been provided.</span> : genres?.map((genre, index) => {
-            return genres.length - 1 === index ? (//i el género actual es el último en el array asi no pone una | a lo ultimo.
+            return genres.length - 1 === index ? (//si el género actual es el último en el array asi no pone una | a lo ultimo.
             <span key={index}>{genre}</span>
             ) : (
                <span key={index}>{`${genre} | `}</span>

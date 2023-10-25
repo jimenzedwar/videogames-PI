@@ -5,8 +5,7 @@ import {getVgByName, updatePage, resetFilter, filterByCreator, filterByGenre, so
 import "./filters.css"
 
 const Filter = () => {
-//Estados locales para almacenar los valores de los campos de busqueda
-const [vgName, setVgName] = useState("");//setVgName fn para actualizar estado
+const [vgName, setVgName] = useState("");
 const [genre, setGenre] = useState("");
 const [creator, setCreator] = useState("");
 const [order, setOrder] = useState("");
@@ -14,28 +13,27 @@ const [order, setOrder] = useState("");
 const dispatch = useDispatch(); 
 const genres = useSelector((state) => state.genres);
 
-// Función se ejecutará cada vez que ocurra  cambio en el campo de búsqueda
 const handleSearchInput = (event) => {
-    const inputValue = event.target.value;// Obtiene el valor actual del campo de búsqueda.
-    setVgName(inputValue);// Actualiza el estado local con el valor del campo de búsqueda.
-    dispatch(updatePage(1));//envio acción para actualizar pagina a 1
+    const inputValue = event.target.value;
+    setVgName(inputValue);
+    dispatch(updatePage(1));
 };
 
-// Función encargada de manejar el evento de enviar el formulario de búsqueda
+
 const handleSearchSubmit = (event) =>{
     event.preventDefault();
-    dispatch(getVgByName(vgName));//Envía acción de búsqueda con el nombre del VG
-    setVgName(""); //restablecer campo de busqueda 
+    dispatch(getVgByName(vgName));
+    setVgName("");
     setGenre("");
     setCreator("");
     setOrder("");
     dispatch(updatePage(1));
 };
 
-//Función se ejecutará cada vez que el usuario seleccione una opción en el campo de genre
+
 const handleFilterByGenre = (event) => {
-    const genre = event.target.value;//Obtiene el valor seleccionado del campo de género
-    setGenre(genre);//actualizo estado local con valor de genero seleccionado 
+    const genre = event.target.value;
+    setGenre(genre);
     dispatch(filterByGenre(genre));
     setVgName("");
     dispatch(updatePage(1));
@@ -43,8 +41,8 @@ const handleFilterByGenre = (event) => {
 
 const handleFilterByCreator = (event) => {
     const creator = event.target.value;
-    setCreator(creator);//Actualiza el estado 'creator' con el valor seleccionado
-    dispatch(filterByCreator(creator));//Envia acción a store
+    setCreator(creator);
+    dispatch(filterByCreator(creator));
     setVgName("");
     setOrder("");
     dispatch(updatePage(1));
@@ -63,7 +61,7 @@ const handleSort = (event) => {
 
 const handleResetFilters = (event) => {
     event.preventDefault();
-    dispatch(resetFilter());//envio accion a tienda
+    dispatch(resetFilter());
     setVgName("");
     setCreator("");
     setGenre("");

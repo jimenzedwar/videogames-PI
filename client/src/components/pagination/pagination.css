@@ -3,9 +3,9 @@
     --font-color-light: #FFF;
     --bg-color: #fff;
     --main-color: #7C81AD;
-    position: relative;
-    top: 200px;
-    left: 870px;
+    position: absolute;
+    bottom: 50px;
+    left: 970px;
     width: 500px;
     height: 36px;
     background-color: var(--bg-color);
